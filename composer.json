@@ -1,0 +1,32 @@
+{
+    "name": "rschaaphuizen/laravel-services",
+    "description": "Package to create services with artisan",
+    "keywords":     ["laravel", "services", "artisan"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ruud Schaaphuizen",
+            "email": "r.schaaphuizen@sqits.nl"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/rschaaphuizen/laravel-services"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Rschaaphuizen\\Services\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Rschaaphuizen\\Services\\ServicesServiceProvider"
+            ]
+        }
+    }
+}
