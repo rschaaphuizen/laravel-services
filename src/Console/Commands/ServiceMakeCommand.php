@@ -3,6 +3,7 @@
 namespace Rschaaphuizen\Services\Console\Commands;
 
 use Illuminate\Console\GeneratorCommand;
+use Symfony\Component\Console\Input\InputOption;
 
 /**
  * Class MakeServiceCommand
@@ -41,7 +42,12 @@ class ServiceMakeCommand extends GeneratorCommand
      */
     protected function getStub()
     {
-        return __DIR__.'/stubs/service.stub';
+        if ($this->option('abstract')) {
+            return __DIR__.'/stubs/service.abstract.stub';
+        }
+
+        return __DIR__.'/stubs/service.plain.stub';
+
     }
 
     /**
@@ -53,5 +59,17 @@ class ServiceMakeCommand extends GeneratorCommand
     protected function getDefaultNamespace($rootNamespace)
     {
         return $rootNamespace.'\Services';
+    }
+
+    /**
+     * Get the console command options.
+     *
+     * @return array
+     */
+    protected function getOptions()
+    {
+        return [
+            ['abstract', 'a', InputOption::VALUE_NONE, 'Generate an abstract service class']
+        ];
     }
 }
