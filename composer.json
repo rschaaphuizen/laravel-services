@@ -6,7 +6,9 @@
     "authors": [
         {
             "name": "Ruud Schaaphuizen",
-            "email": "r.schaaphuizen@sqits.nl"
+            "email": "r.schaaphuizen@sqits.nl",
+            "homepage": "https://www.sqits.nl",
+            "role": "Developer"
         }
     ],
     "repositories": [
@@ -16,7 +18,9 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {},
+    "require": {
+        "php": "^7.0",
+    },
     "autoload": {
         "psr-4": {
             "Rschaaphuizen\\Services\\": "src/"
